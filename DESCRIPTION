@@ -4,13 +4,26 @@ Title: What the Package Does (Title Case)
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "Kara", "Schmidt",
+      email = "kara.l.schmidt-1@ou.edu",
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: This package contains functions, datasets, and examples 
+    for MATH 4753 coursework. Replace this text with a more detailed 
+    description of what the package does.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Imports: 
+  graphics,
+  shiny
+RoxygenNote: 7.3.2
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+Depends: 
+    R (>= 3.5)

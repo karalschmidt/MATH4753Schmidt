@@ -1,0 +1,43 @@
+---
+title: "Birthday"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Birthday}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753Schmidt2025)
+```
+
+# The mathematical derivation of the probability that two of more peiple in a class of size n have the same birthday (Use Latex only) 
+
+$$ 365P_n = n!^{365}C_n $$
+$$ P(\bar A) = \frac{365P_n}{365^n} $$
+$$ logP(\bar A) = log^{365P}n - nlog(365) = log(n!)+logchoose(365,n) $$
+$$ P(A) = 1-P(\bar A) $$
+$$ P(A) = 1-exp(logP(\bar A)) $$
+
+# The reformulation of this probability using lfactorial and lchoose 
+
+$$ P(\bar A) = lfactorial(n) + lchoose(365,n) - nlog365 $$
+$$ P(A) = 1-exp(lfactorial(n)+lchoose(365,n)-nlog365) $$ 
+
+# Show the body of the function 
+
+birthday = function(x){
+  1 - exp(lchoose(365,x) + lfactorial(x) - x*log(365))
+}
+
+# Run 
+```{r}
+birthday(x = 20:25)
+```
