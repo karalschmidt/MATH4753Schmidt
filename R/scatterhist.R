@@ -6,6 +6,7 @@
 #' @param ylab y label
 #'
 #' @returns A sophisticated plot
+#' @importFrom graphics barplot hist layout mtext par
 #' @export
 #'
 #' @examples
